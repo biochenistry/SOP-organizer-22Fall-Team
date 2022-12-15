@@ -183,3 +183,26 @@ Finally we need to run  the pdfviewer-server. So run the commands to use this:
 
 
 With that your server should be working and completely deployed!
+
+## Reference
+
+**Document Editor**
+
+https://ej2.syncfusion.com/vue/documentation/document-editor/getting-started/
+
+**Document Editor Docker server project**
+
+https://github.com/SyncfusionExamples/Word-Processor-Server-Docker
+
+**PDF Viewer**
+
+https://ej2.syncfusion.com/vue/documentation/pdfviewer/getting-started/
+
+
+**file manager**
+
+https://ej2.syncfusion.com/vue/documentation/file-manager/getting-started/
+
+**File system provider**
+
+https://ej2.syncfusion.com/vue/documentation/file-manager/file-system-provider/
