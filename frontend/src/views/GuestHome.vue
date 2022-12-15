@@ -8,19 +8,7 @@
           <div>View</div>
         </div>
         <div class="e-content">
-          <div v-if="!isAuthenticated">
-            <ejs-filemanager
-              :fileOpen="fileOpen"
-              id="overview_file"
-              :ajaxSettings="ajaxSettings"
-              :contextMenuSettings="contextMenuSettings"
-              :toolbarSettings="toolbarSettings"
-              :view="view"
-              :height="'calc(100vh - 107px)'"
-              :uploadSettings="uploadSettings"
-            ></ejs-filemanager>
-          </div>
-          <div v-else>
+          <div >
             <ejs-filemanager 
               :fileOpen="fileOpen"
               id="overview_file"
@@ -28,6 +16,8 @@
               :view="view"
               :height="'calc(100vh - 107px)'"
               :uploadSettings="uploadSettings"
+              :toolbarSettings="token?'':toolbarSettings"
+              :contextMenuSettings="token?'':contextMenuSettings"
             ></ejs-filemanager>
           </div>
           <div id="viewer_panel">
@@ -53,7 +43,7 @@
             <div ref="de_titlebar" id="documenteditor_titlebar" class="e-de-ctn-title">
             <div>
               <label v-on:blur="titleBarBlurEvent" id="documenteditor_title_name" :style="titileStyle" >{{documentName}}</label>
-              <el-button type="save"  style=" margin-top: 6px"  @click="save_local">Save</el-button>        </div>    
+              <el-button type="save"  style=" margin-top: 6px"  @click="save">Save</el-button>        </div>    
           </div>
           </div>
           </div>
@@ -169,8 +159,8 @@ export default {
         this.$refs.tab2.select(0);
       }
     },
-    save:function(args){
-        // this.$refs.doceditcontainer.$refs.documenteditor.ej2Instances.documentEditor.save('sample', 'Docx');
+    save:function(){
+        this.$refs.doceditcontainer.$refs.documenteditor.ej2Instances.documentEditor.save('sample', 'Docx');
         let http = new XMLHttpRequest();
         http.open('POST', 'http://localhost:6002/api/documenteditor/Save'); 
         http.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -185,10 +175,7 @@ export default {
         // console.log(fileName)
         console.log(data)
         http.send(JSON.stringify(data));
-    },
-    save_local:function(){
-      this.$refs.doceditcontainer.$refs.documenteditor.ej2Instances.documentEditor.save(this.$refs.doceditcontainer.$refs.documenteditor.ej2Instances.documentEditor.documentName, 'Docx');
-    },
+      },
   },
   provide: {
             //Inject require modules.
@@ -198,9 +185,6 @@ export default {
   computed: {
     token() {
       return store.state.token;
-    },
-    isAuthenticated(){
-      return store.state.token
     },
   },
 };
