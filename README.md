@@ -173,13 +173,13 @@ Now you need to run the document editor container. So we will run the commands t
 
 `docker pull xuanji86/word-server`
 
-`docker run -it --name word-server -p 6002:6002 xuanji86/word-server`
+`docker run -it --name word-server -p 6002:6002 syncfusion/word-processor-server:latest `
 
 Finally we need to run  the pdfviewer-server. So run the commands to use this:
 
 `docker pull syncfusion/pdfviewer-server`
 
-`docker run -it --name pdf-viewer -p 8080:8080 syncfusion/pdfviewer-server`
+`docker run -it --name pdf-viewer -p 6001:6001 syncfusion/pdfviewer-server:latest`
 
 
 With that your server should be working and completely deployed!
