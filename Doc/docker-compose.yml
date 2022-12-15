@@ -1,0 +1,12 @@
+version: '3.4' 
+
+services: 
+ word-processor-server: 
+    image: syncfusion/word-processor-server:latest 
+    environment: 
+      #Provide your license key for activation
+      SYNCFUSION_LICENSE_KEY: ORg4AjUWIQA/Gnt2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRd0RiWn9Yc3VVT2ZZUEc=
+    volumes:
+    - /home/anji/Desktop/402/SOP-Organizer-1/media/Documents:/app/Data
+    ports:
+    - "6002:80"

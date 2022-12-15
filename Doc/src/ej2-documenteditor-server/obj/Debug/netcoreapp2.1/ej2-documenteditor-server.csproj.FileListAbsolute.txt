@@ -1,0 +1,5 @@
+/home/anji/Desktop/doc_docker/Word-Processor-Server-Docker/src/ej2-documenteditor-server/obj/Debug/netcoreapp2.1/ej2-documenteditor-server.csproj.AssemblyReference.cache
+/home/anji/Desktop/doc_docker/Word-Processor-Server-Docker/src/ej2-documenteditor-server/obj/Debug/netcoreapp2.1/ej2-documenteditor-server.GeneratedMSBuildEditorConfig.editorconfig
+/home/anji/Desktop/doc_docker/Word-Processor-Server-Docker/src/ej2-documenteditor-server/obj/Debug/netcoreapp2.1/ej2-documenteditor-server.AssemblyInfoInputs.cache
+/home/anji/Desktop/doc_docker/Word-Processor-Server-Docker/src/ej2-documenteditor-server/obj/Debug/netcoreapp2.1/ej2-documenteditor-server.AssemblyInfo.cs
+/home/anji/Desktop/doc_docker/Word-Processor-Server-Docker/src/ej2-documenteditor-server/obj/Debug/netcoreapp2.1/ej2-documenteditor-server.csproj.CoreCompileInputs.cache

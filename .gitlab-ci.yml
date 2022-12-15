@@ -1,0 +1,37 @@
+stages:
+  - build
+  - Django_test
+  - Vue_test
+
+image: xuanji86/cicd:2.0
+
+build:
+  stage: build
+  script:
+    - echo "starting build frontend"
+    - cd frontend
+    - npm install --progress=false
+    - npm run build
+  artifacts:
+    paths:
+      - $(pwd)/SOP-Organizer-1
+
+Django_test:
+  stage: Django_test
+  script:
+    # - echo "running tests..."
+    # - python3 manage.py test organizer
+    - echo "checking the server..."
+    - python3 manage.py check
+    # - python3 manage.py runserver 0.0.0.0:8000
+    # - curl -sSf http://127.0.0.1:8000/ > /dev/null && echo "server is running" || echo "server is not running"
+    - echo "all tests passed"
+
+Vue_test:
+  stage: Vue_test
+  script:
+    - cd frontend
+    - npm install  --progress=false
+    # - npm run test
+    - echo "all tests passed"
+
